@@ -23,9 +23,8 @@ public class Klass {
         if (student.isIn(this)) {
             setLeader(student);
             System.out.println(notifyLeader(student));
-        } else {
-            System.out.println("It is not one of us.");
         }
+        System.out.println("It is not one of us.");
     }
 
     private String notifyLeader(Student leader) {
