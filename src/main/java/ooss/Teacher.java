@@ -10,6 +10,7 @@ public class Teacher extends Person {
     public Teacher(int id, String name, int age) {
         super(id, name, age);
     }
+
     public void assignTo(Klass klass) {
         if (!classesTeaching.contains(klass)) {
             classesTeaching.add(klass);
@@ -21,22 +22,18 @@ public class Teacher extends Person {
     }
 
     public boolean isTeaching(Student student) {
-        for (Klass klass : classesTeaching) {
-            if (student.isIn(klass)) {
-                return true;
-            }
-        }
-        return false;
+        return classesTeaching.stream().anyMatch(klass -> student.isIn(klass));
     }
+
     @Override
     public String introduce() {
-        if (classesTeaching.size() == 1) {
-            return String.format("My name is %s. I am %d years old. I am a teacher. I teach Class %d.", name, age, classesTeaching.get(0).getNumber());
-        } else if (classesTeaching.size() > 1) {
-            String classNumbers = classesTeaching.stream().map(klass -> String.valueOf(klass.getNumber())).collect(Collectors.joining(", "));
-            return String.format("My name is %s. I am %d years old. I am a teacher. I teach Class %s.", name, age, classNumbers);
-        } else {
+        String classNumbers = classesTeaching.stream().map(klass -> String.valueOf(klass.getNumber())).collect(Collectors.joining(", "));
+        if (classesTeaching.isEmpty()) {
             return String.format("My name is %s. I am %d years old. I am a teacher.", name, age);
         }
+        return (classesTeaching.size() == 1) ?
+                String.format("My name is %s. I am %d years old. I am a teacher. I teach Class %d.", name, age, classesTeaching.get(0).getNumber()) :
+                String.format("My name is %s. I am %d years old. I am a teacher. I teach Class %s.", name, age, classNumbers);
     }
+
 }
