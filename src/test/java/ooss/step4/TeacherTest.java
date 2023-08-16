@@ -38,17 +38,17 @@ public class TeacherTest {
         assertTrue(belongsToKlass2);
     }
 
-//    @Test
-//    public void should_return_message_with_name_age_and_class_when_introduce_given_teacher_teaches_one_class() {
-//        Teacher jerry = new Teacher(1, "Jerry", 21);
-//        Klass klass1 = new Klass(1);
-//        jerry.assignTo(klass1);
-//
-//        String introduce = jerry.introduce();
-//
-//        assertEquals("My name is Jerry. I am 21 years old. I am a teacher. I teach Class 1.", introduce);
-//    }
-//
+    @Test
+    public void should_return_message_with_name_age_and_class_when_introduce_given_teacher_teaches_one_class() {
+        Teacher jerry = new Teacher(1, "Jerry", 21);
+        Klass klass1 = new Klass(1);
+        jerry.assignTo(klass1);
+
+        String introduce = jerry.introduce();
+
+        assertEquals("My name is Jerry. I am 21 years old. I am a teacher. I teach Class 1.", introduce);
+    }
+
 //    @Test
 //    public void should_return_message_with_name_age_and_class_when_introduce_given_teacher_teaches_multiple_classes() {
 //        Teacher jerry = new Teacher(1, "Jerry", 21);
