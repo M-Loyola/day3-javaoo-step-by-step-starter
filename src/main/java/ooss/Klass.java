@@ -12,9 +12,10 @@ public class Klass {
     public int getNumber() {
         return number;
     }
+
     public void assignLeader(Student student) {
         if (student.isIn(this)) {
-            leader = student;
+            setLeader(student); // Call setLeader to update both leader and student's isLeader
         } else {
             System.out.println("It is not one of us.");
         }
@@ -23,17 +24,9 @@ public class Klass {
     public boolean isLeader(Student student) {
         return leader != null && leader.equals(student);
     }
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
 
-        Klass klass = (Klass) obj;
-        return number == klass.number;
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
+    public void setLeader(Student student) {
+        leader = student;
+        student.setLeader(true); // Set the student's isLeader attribute to true
     }
 }

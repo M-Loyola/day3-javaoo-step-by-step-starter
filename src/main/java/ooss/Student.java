@@ -19,7 +19,8 @@ public class Student extends Person {
 
     public void assignLeader() {
         if (klass != null) {
-            klass.assignLeader(this);
+            klass.setLeader(this); // Set the leader in Klass instance
+            setLeader(true); // Set the isLeader attribute to true
         }
     }
 
