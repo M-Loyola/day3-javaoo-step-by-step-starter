@@ -62,20 +62,20 @@ public class TeacherTest {
         assertEquals("My name is Jerry. I am 21 years old. I am a teacher. I teach Class 2, 3.", introduce);
     }
 
-//    @Test
-//    public void should_return_false_when_isTeaching_given_student_not_in_the_class_taught_by_teacher() {
-//        Klass klass1 = new Klass(1);
-//        Klass klass2 = new Klass(2);
-//        Student tom = new Student(1, "Tom", 18);
-//        tom.join(klass1);
-//        Teacher jerry = new Teacher(2, "Jerry", 21);
-//        jerry.assignTo(klass2);
-//
-//        boolean isTeaching = jerry.isTeaching(tom);
-//
-//        assertFalse(isTeaching);
-//    }
-//
+    @Test
+    public void should_return_false_when_isTeaching_given_student_not_in_the_class_taught_by_teacher() {
+        Klass klass1 = new Klass(1);
+        Klass klass2 = new Klass(2);
+        Student tom = new Student(1, "Tom", 18);
+        tom.join(klass1);
+        Teacher jerry = new Teacher(2, "Jerry", 21);
+        jerry.assignTo(klass2);
+
+        boolean isTeaching = jerry.isTeaching(tom);
+
+        assertFalse(isTeaching);
+    }
+
 //    @Test
 //    public void should_return_true_when_isTeaching_given_student_in_the_class_taught_by_teacher() {
 //        Klass klass1 = new Klass(1);
