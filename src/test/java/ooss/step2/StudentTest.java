@@ -20,15 +20,15 @@ public class StudentTest {
         assertEquals("My name is Jim. I am 19 years old. I am a student.", jimIntroduce);
     }
 
-//    @Test
-//    public void should_return_is_equals_by_id_when_equals_given_two_students_with_id() {
-//        Student student1 = new Student(1, "Tom", 18);
-//        Student student2 = new Student(1, "Tommy", 19);
-//
-//        Student student3 = new Student(1, "Tom", 18);
-//        Student student4 = new Student(2, "Tom", 18);
-//
-//        assertEquals(student1, student2);
-//        assertNotEquals(student3, student4);
-//    }
+    @Test
+    public void should_return_is_equals_by_id_when_equals_given_two_students_with_id() {
+        Student student1 = new Student(1, "Tom", 18);
+        Student student2 = new Student(1, "Tommy", 19);
+
+        Student student3 = new Student(1, "Tom", 18);
+        Student student4 = new Student(2, "Tom", 18);
+
+        assertEquals(student1, student2);
+        assertNotEquals(student3, student4);
+    }
 }
