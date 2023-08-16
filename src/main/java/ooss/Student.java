@@ -38,4 +38,8 @@ public class Student extends Person {
                     String.format("My name is %s. I am %d years old. I am a student.", name, age);
         }
     }
+
+    public boolean isLeader() {
+        return this.isLeader;
+    }
 }
