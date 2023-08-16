@@ -49,19 +49,19 @@ public class TeacherTest {
         assertEquals("My name is Jerry. I am 21 years old. I am a teacher. I teach Class 1.", introduce);
     }
 
-//    @Test
-//    public void should_return_message_with_name_age_and_class_when_introduce_given_teacher_teaches_multiple_classes() {
-//        Teacher jerry = new Teacher(1, "Jerry", 21);
-//        Klass klass2 = new Klass(2);
-//        Klass klass3 = new Klass(3);
-//        jerry.assignTo(klass2);
-//        jerry.assignTo(klass3);
-//
-//        String introduce = jerry.introduce();
-//
-//        assertEquals("My name is Jerry. I am 21 years old. I am a teacher. I teach Class 2, 3.", introduce);
-//    }
-//
+    @Test
+    public void should_return_message_with_name_age_and_class_when_introduce_given_teacher_teaches_multiple_classes() {
+        Teacher jerry = new Teacher(1, "Jerry", 21);
+        Klass klass2 = new Klass(2);
+        Klass klass3 = new Klass(3);
+        jerry.assignTo(klass2);
+        jerry.assignTo(klass3);
+
+        String introduce = jerry.introduce();
+
+        assertEquals("My name is Jerry. I am 21 years old. I am a teacher. I teach Class 2, 3.", introduce);
+    }
+
 //    @Test
 //    public void should_return_false_when_isTeaching_given_student_not_in_the_class_taught_by_teacher() {
 //        Klass klass1 = new Klass(1);
