@@ -34,21 +34,21 @@ public class KlassTest {
 
         assertThat(systemOut(), containsString("I am Jerry, teacher of Class 2. I know Tom become Leader."));
     }
-//
-//    @Test
-//    public void should_print_message_when_assign_leader_given_another_student_is_in_the_class() {
-//        Klass klass = new Klass(2);
-//        Student bob = new Student(1, "Bob", 18);
-//        bob.join(klass);
-//        klass.attach(bob);
-//        Student tom = new Student(1, "Tom", 18);
-//        tom.join(klass);
-//
-//        klass.assignLeader(tom);
-//
-//        assertThat(systemOut(), containsString("I am Bob, student of Class 2. I know Tom become Leader."));
-//    }
-//
+
+    @Test
+    public void should_print_message_when_assign_leader_given_another_student_is_in_the_class() {
+        Klass klass = new Klass(2);
+        Student bob = new Student(1, "Bob", 18);
+        bob.join(klass);
+        klass.attach(bob);
+        Student tom = new Student(1, "Tom", 18);
+        tom.join(klass);
+
+        klass.assignLeader(tom);
+
+        assertThat(systemOut(), containsString("I am Bob, student of Class 2. I know Tom become Leader."));
+    }
+
     private String systemOut() {
         return outContent.toString();
     }

@@ -62,4 +62,7 @@ public class Klass {
     public void attach(Teacher teacher) {
         this.teacher = teacher;
     }
+    public void attach(Student student) {
+        students.add(student);
+    }
 }
