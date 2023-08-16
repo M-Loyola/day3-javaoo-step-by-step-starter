@@ -18,14 +18,6 @@ public class Klass {
         return number;
     }
 
-    public void assignTeacher(Teacher teacher) {
-        this.teacher = teacher;
-    }
-
-    public void addStudent(Student student) {
-        students.add(student);
-    }
-
     public void assignLeader(Student student) {
         if (student.isIn(this)) {
             setLeader(student);
