@@ -65,4 +65,12 @@ public class Klass {
     public void attach(Student student) {
         students.add(student);
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Klass klass = (Klass) obj;
+        return number == klass.number;
+    }
 }
