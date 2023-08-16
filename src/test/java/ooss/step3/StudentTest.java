@@ -8,20 +8,20 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class StudentTest {
 
-//    @Test
-//    public void should_return_result_by_student_is_in_class_when_isIn_given_student() {
-//        Student jim = new Student(1, "Tom", 18);
-//        Klass klass = new Klass(1);
-//        jim.join(klass);
-//
-//        Student tom = new Student(1, "Tom", 18);
-//        boolean tomIn = tom.isIn(klass);
-//
-//        boolean jimIn = jim.isIn(klass);
-//
-//        assertFalse(tomIn);
-//        assertTrue(jimIn);
-//    }
+    @Test
+    public void should_return_result_by_student_is_in_class_when_isIn_given_student() {
+        Student jim = new Student(1, "Tom", 18);
+        Klass klass = new Klass(1);
+        jim.join(klass);
+
+        Student tom = new Student(1, "Tom", 18);
+        boolean tomIn = tom.isIn(klass);
+
+        boolean jimIn = jim.isIn(klass);
+
+        assertFalse(tomIn);
+        assertTrue(jimIn);
+    }
 //
 //    @Test
 //    public void Should_only_in_the_recently_joined_class_when_isIn_given_student_join_two_classes_in_turn() {
