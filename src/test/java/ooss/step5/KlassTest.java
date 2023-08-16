@@ -41,17 +41,17 @@ public class KlassTest {
         assertFalse(tomIsLeader);
         assertTrue(kingIsLeader);
     }
-//    @Test
-//    public void should_print_prompt_message_when_assign_leader_given_student_is_not_in_class() throws Exception {
-//        Student tom = new Student(1, "Tom", 21);
-//        Klass klass = new Klass(1);
-//
-//        klass.assignLeader(tom);
-//
-//        assertThat(systemOut(), containsString("It is not one of us."));
-//    }
-//
-//    private String systemOut() {
-//        return outContent.toString();
-//    }
+    @Test
+    public void should_print_prompt_message_when_assign_leader_given_student_is_not_in_class() throws Exception {
+        Student tom = new Student(1, "Tom", 21);
+        Klass klass = new Klass(1);
+
+        klass.assignLeader(tom);
+
+        assertThat(systemOut(), containsString("It is not one of us."));
+    }
+
+    private String systemOut() {
+        return outContent.toString();
+    }
 }
