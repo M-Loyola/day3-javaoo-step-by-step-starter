@@ -16,14 +16,7 @@ public class Student extends Person {
     public boolean isIn(Klass klass) {
         return this.klass != null && this.klass.equals(klass);
     }
-
-    public void assignLeader() {
-        if (klass != null) {
-            klass.setLeader(this); // Set the leader in Klass instance
-            setLeader(true); // Set the isLeader attribute to true
-        }
-    }
-
+    
     public void setLeader(boolean isLeader) {
         this.isLeader = isLeader;
     }
