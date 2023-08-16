@@ -25,11 +25,10 @@ public class Student extends Person {
     public String introduce() {
         if (isLeader) {
             return String.format("My name is %s. I am %d years old. I am a student. I am the leader of class %d.", name, age, klass.getNumber());
-        } else {
-            return isIn(klass) ?
-                    String.format("My name is %s. I am %d years old. I am a student. I am in class %d.", name, age, klass.getNumber()) :
-                    String.format("My name is %s. I am %d years old. I am a student.", name, age);
         }
+        return isIn(klass) ?
+                String.format("My name is %s. I am %d years old. I am a student. I am in class %d.", name, age, klass.getNumber()) :
+                String.format("My name is %s. I am %d years old. I am a student.", name, age);
     }
 
     public boolean isLeader() {
