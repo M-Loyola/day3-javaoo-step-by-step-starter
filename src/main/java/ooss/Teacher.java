@@ -22,7 +22,7 @@ public class Teacher extends Person {
     }
 
     public boolean isTeaching(Student student) {
-        return taughtClasses.stream().anyMatch(klass -> student.isIn(klass));
+        return taughtClasses.stream().anyMatch(student::isIn);
     }
 
     @Override
