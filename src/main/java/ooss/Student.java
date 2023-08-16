@@ -16,7 +16,7 @@ public class Student extends Person {
     public boolean isIn(Klass klass) {
         return this.klass != null && this.klass.equals(klass);
     }
-    
+
     public void setLeader(boolean isLeader) {
         this.isLeader = isLeader;
     }

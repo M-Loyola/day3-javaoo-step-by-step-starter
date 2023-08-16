@@ -2,6 +2,7 @@ package ooss;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Klass {
 
@@ -21,25 +22,20 @@ public class Klass {
     public void assignLeader(Student student) {
         if (student.isIn(this)) {
             setLeader(student);
-            notifyTeacher(student);
-            notifyOtherStudents(student);
+            System.out.println(notifyLeader(student));
         } else {
             System.out.println("It is not one of us.");
         }
     }
 
-    private void notifyTeacher(Student leader) {
-        if (teacher != null) {
-            System.out.printf("I am %s, teacher of Class %d. I know %s become Leader.%n", teacher.getName(), number, leader.getName());
-        }
-    }
-
-    private void notifyOtherStudents(Student leader) {
-        for (Student student : students) {
-            if (!student.isLeader()) {
-                System.out.printf("I am %s, student of Class %d. I know %s become Leader.%n", student.getName(), number, leader.getName());
-            }
-        }
+    private String notifyLeader(Student leader) {
+        return (teacher != null) ?
+                String.format("I am %s, teacher of Class %d. I know %s become Leader.%n", teacher.getName(), number, leader.getName())
+                :
+                students.stream()
+                        .filter(student -> !student.isLeader())
+                        .map(student -> String.format("I am %s, student of Class %d. I know %s become Leader.%n", student.getName(), number, leader.getName()))
+                        .collect(Collectors.joining());
     }
 
     public boolean isLeader(Student student) {
@@ -54,9 +50,11 @@ public class Klass {
     public void attach(Teacher teacher) {
         this.teacher = teacher;
     }
+
     public void attach(Student student) {
         students.add(student);
     }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
