@@ -9,19 +9,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TeacherTest {
 
-//    @Test
-//    public void should_return_result_by_is_belong_to_when_belongsTo_given_teacher_teaches_in_the_class() {
-//        Teacher tom = new Teacher(1, "Tom", 21);
-//        Klass klass = new Klass(1);
-//
-//        Teacher jerry = new Teacher(2, "Jerry", 21);
-//        tom.assignTo(klass);
-//        boolean jerryBelongsTo = jerry.belongsTo(klass);
-//        boolean tomBelongsTo = tom.belongsTo(klass);
-//
-//        assertFalse(jerryBelongsTo);
-//        assertTrue(tomBelongsTo);
-//    }
+    @Test
+    public void should_return_result_by_is_belong_to_when_belongsTo_given_teacher_teaches_in_the_class() {
+        Teacher tom = new Teacher(1, "Tom", 21);
+        Klass klass = new Klass(1);
+
+        Teacher jerry = new Teacher(2, "Jerry", 21);
+        tom.assignTo(klass);
+        boolean jerryBelongsTo = jerry.belongsTo(klass);
+        boolean tomBelongsTo = tom.belongsTo(klass);
+
+        assertFalse(jerryBelongsTo);
+        assertTrue(tomBelongsTo);
+    }
 //
 //    @Test
 //    public void should_all_return_true_when_belongsTo_given_teacher_teaches_multiple_classes() {
