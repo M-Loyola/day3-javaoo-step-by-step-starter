@@ -22,10 +22,14 @@ public class Klass {
     public void assignLeader(Student student) {
         if (!student.isIn(this)) {
             System.out.println("It is not one of us.");
+            return;
         }
         setLeader(student);
+        introduceLeader(student);
+    }
+    private void introduceLeader(Student student) {
         System.out.println((teacher != null) ?
-                teacher.introduceLeader(number, leader.getName()) :
+                teacher.introduceLeader(number, leader.getName()):
                 student.introduceLeader(students, number, leader.getName())
         );
     }
