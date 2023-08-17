@@ -24,7 +24,7 @@ public class Teacher extends Person {
     public boolean isTeaching(Student student) {
         return taughtClasses.stream().anyMatch(student::isIn);
     }
-    public String notifyLeader(int number, String leader) {
+    public String introduceLeader(int number, String leader) {
         return String.format("I am %s, teacher of Class %d. I know %s become Leader.%n", name, number , leader);
     }
 

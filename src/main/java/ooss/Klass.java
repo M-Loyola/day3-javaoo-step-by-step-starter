@@ -25,8 +25,8 @@ public class Klass {
         }
         setLeader(student);
         System.out.println((teacher != null) ?
-                teacher.notifyLeader(number, leader.getName()) :
-                student.notifyLeader(students, student.getName(), number, leader.getName())
+                teacher.introduceLeader(number, leader.getName()) :
+                student.introduceLeader(students, number, leader.getName())
         );
     }
 

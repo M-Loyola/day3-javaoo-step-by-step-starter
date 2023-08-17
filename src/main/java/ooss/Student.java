@@ -23,7 +23,7 @@ public class Student extends Person {
     public void setLeader(boolean isLeader) {
         this.isLeader = isLeader;
     }
-    public String notifyLeader (List<Student> students, String name, int number, String leader) {
+    public String introduceLeader (List<Student> students, int number, String leader) {
         return students.stream()
                 .filter(student -> !student.isLeader())
                 .map(student -> String.format("I am %s, student of Class %d. I know %s become Leader.%n", student.getName(), number, leader))
