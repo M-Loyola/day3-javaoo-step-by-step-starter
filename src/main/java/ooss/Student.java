@@ -1,5 +1,8 @@
 package ooss;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Student extends Person {
 
     private Klass klass;
@@ -20,7 +23,12 @@ public class Student extends Person {
     public void setLeader(boolean isLeader) {
         this.isLeader = isLeader;
     }
-
+    public String notifyLeader (List<Student> students, String name, int number, String leader) {
+        return students.stream()
+                .filter(student -> !student.isLeader())
+                .map(student -> String.format("I am %s, student of Class %d. I know %s become Leader.%n", student.getName(), number, leader))
+                .collect(Collectors.joining());
+    }
     @Override
     public String introduce() {
         if (isLeader) {

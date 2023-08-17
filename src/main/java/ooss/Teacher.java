@@ -24,6 +24,9 @@ public class Teacher extends Person {
     public boolean isTeaching(Student student) {
         return taughtClasses.stream().anyMatch(student::isIn);
     }
+    public String notifyLeader(int number, String leader) {
+        return String.format("I am %s, teacher of Class %d. I know %s become Leader.%n", name, number , leader);
+    }
 
     @Override
     public String introduce() {
@@ -31,9 +34,7 @@ public class Teacher extends Person {
         if (taughtClasses.isEmpty()) {
             return String.format("My name is %s. I am %d years old. I am a teacher.", name, age);
         }
-        return (taughtClasses.size() == 1) ?
-                String.format("My name is %s. I am %d years old. I am a teacher. I teach Class %d.", name, age, taughtClasses.get(0).getNumber()) :
-                String.format("My name is %s. I am %d years old. I am a teacher. I teach Class %s.", name, age, classNumbers);
+        return String.format("My name is %s. I am %d years old. I am a teacher. I teach Class %s.", name, age, classNumbers);
     }
 
 }

@@ -20,21 +20,14 @@ public class Klass {
     }
 
     public void assignLeader(Student student) {
-        if (student.isIn(this)) {
-            setLeader(student);
-            System.out.println(notifyLeader(student));
+        if (!student.isIn(this)) {
+            System.out.println("It is not one of us.");
         }
-        System.out.println("It is not one of us.");
-    }
-
-    private String notifyLeader(Student leader) {
-        return (teacher != null) ?
-                String.format("I am %s, teacher of Class %d. I know %s become Leader.%n", teacher.getName(), number, leader.getName())
-                :
-                students.stream()
-                        .filter(student -> !student.isLeader())
-                        .map(student -> String.format("I am %s, student of Class %d. I know %s become Leader.%n", student.getName(), number, leader.getName()))
-                        .collect(Collectors.joining());
+        setLeader(student);
+        System.out.println((teacher != null) ?
+                teacher.notifyLeader(number, leader.getName()) :
+                student.notifyLeader(students, student.getName(), number, leader.getName())
+        );
     }
 
     public boolean isLeader(Student student) {
